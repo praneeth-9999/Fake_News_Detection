@@ -57,28 +57,3 @@ print(classification_report(label_test, predict))
 
 print("\nConfusion Matrix")
 print(confusion_matrix(label_test, predict))
-
-# --------- Testing using saved model ----------- #
-
-# print("**********Using saved model**********")
-# loaded_tfid = pickle.load(open(filename_vectorizer, 'rb')) # Load saved vectorizer
-# loaded_classifier = pickle.load(open(filename, 'rb')) # Load saved classifier model
-
-# test_fake_news = pd.read_csv('datasets/Fake.csv')
-# test_true_news = pd.read_csv('datasets/True.csv')
-# test_fake_news['label'] = 'Fake'
-# test_true_news['label'] = 'Real'
-# test_fake_text = test_fake_news['text'].astype('U')
-
-# transformed_text_to_predict = loaded_tfid.transform(test_text)
-
-# predict_from_model = loaded_classifier.predict(transformed_text_to_predict)
-# # print(predict_from_model)
-
-# # Get Accuracy Score
-# test_score = accuracy_score(label_test, predict_from_model)
-# print("Accuracy= %.2f%%" % (score*100))
-
-# --------- Testing using saved model ----------- #
-
-#plot_cmat(label_test, predict) # Show Confusion Matrix
